@@ -1,6 +1,6 @@
 description: "Product catalogue of tiers and add-ons composed into plans, each collapsing to a deterministic billing SKU and to the concrete entitlements it grants, for Swift."
 topics:
-  - foundations
+  - compositions
   - catalog
   - entitlement
   - billing

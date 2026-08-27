@@ -1,5 +1,5 @@
 import Dependencies
-public import Tagged_Primitives
+public import Tagged
 
 extension Product {
 

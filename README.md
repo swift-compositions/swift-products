@@ -21,7 +21,7 @@ A product catalogue of tiers and add-ons composed into plans, where each plan co
 ```swift
 dependencies: [
     .package(
-        url: "https://github.com/swift-foundations/swift-products.git",
+        url: "https://github.com/swift-compositions/swift-products.git",
         branch: "main"
     )
 ]
@@ -46,7 +46,7 @@ The package publishes no tags yet, so the dependency is pinned to `main`.
 import Products
 
 // Module-qualified: the `Products` module's `Product` shares its name with a type
-// re-exported through the primitives graph, so the qualifier is required at call sites
+// re-exported through the molecule graph, so the qualifier is required at call sites
 // that can see both.
 // A plan's add-ons are an unordered Set, but its billing identity must not be.
 let written = Products.Product.SKU(tier: .hourly, addons: [.analytics, .teamAccess])
@@ -121,9 +121,9 @@ passing, so no CI badge is shown.
 
 **Dependencies**
 
-- [swift-tagged-primitives](https://github.com/swift-primitives/swift-tagged-primitives) — Phantom-typed value wrappers backing the tier, add-on, and SKU identifiers.
-- swift-entitlement (private, unreleased) — Grant and deny decisions with expiry and override precedence, used by capability resolution.
-- swift-dependencies (unreleased) — Dependency injection and the `\.products` accessor's resolution machinery.
+- [swift-tagged](https://github.com/swift-molecules/swift-tagged) — Phantom-typed value wrappers backing the tier, add-on, and SKU identifiers.
+- [swift-entitlement](https://github.com/swift-compositions/swift-entitlement) — Grant and deny decisions with expiry and override precedence, used by capability resolution.
+- [swift-dependencies](https://github.com/swift-compositions/swift-dependencies) — Dependency injection and the `\.products` accessor's resolution machinery.
 
 **Used By**
 

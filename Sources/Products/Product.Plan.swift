@@ -1,7 +1,7 @@
 import Dependencies
 import Entitlement
 import Foundation
-public import Tagged_Primitives
+public import Tagged
 
 extension Product {
 

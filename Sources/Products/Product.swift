@@ -1,5 +1,5 @@
 import Dependencies
-import Tagged_Primitives
+import Tagged
 
 public struct Product: Sendable, Codable, Hashable {
 
