@@ -45,7 +45,7 @@ let package = Package(
         ),
         .package(url: "https://github.com/swift-compositions/swift-entitlement.git", branch: "main"),
         .package(
-            url: "https://github.com/swift-molecules/swift-tagged.git",
+            url: "https://github.com/swift-atoms/swift-tagged.git",
             branch: "main"
         ),
         .package(url: "https://github.com/swift-compositions/swift-witnesses.git", branch: "main"),
