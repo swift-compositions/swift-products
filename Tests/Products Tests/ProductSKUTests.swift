@@ -1,6 +1,5 @@
 import Dependencies
 import Dependencies_Test_Support
-import Foundation
 import Testing
 
 @testable import Products
@@ -108,13 +107,10 @@ struct ProductSKUTests {
 
     @Test("Capability transport values and Set facade remain stable")
     func capabilityTransportValuesAndSetFacadeRemainStable() throws {
-        let encoded = try JSONEncoder().encode(Product.Capability.apiAccess)
-        let decoded = try JSONDecoder().decode(
-            Set<Product.Capability>.self,
-            from: Data(#"["api_access","csv_export"]"#.utf8)
-        )
+        let encoded = try ProductsJSON.encodedString(.apiAccess)
+        let decoded = try ProductsJSON.capabilities(#"["api_access","csv_export"]"#)
 
-        #expect(String(bytes: encoded, encoding: .utf8) == #""api_access""#)
+        #expect(encoded == #""api_access""#)
         #expect(decoded == [.apiAccess, .csvExport])
     }
 }
