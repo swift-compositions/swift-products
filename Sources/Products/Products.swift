@@ -15,8 +15,7 @@ extension Product.Service {
     public struct Client: Sendable {
         public var catalog: @Sendable () async throws(Product.Service.Error) -> Product.Catalog
 
-        public var validate:
-            @Sendable (_ plan: Product.Plan) async throws(Product.Service.Error) -> Bool
+        public var validate: @Sendable (_ plan: Product.Plan) async throws(Product.Service.Error) -> Bool
 
         public var capabilities:
             @Sendable (_ plan: Product.Plan) async throws(Product.Service.Error)
