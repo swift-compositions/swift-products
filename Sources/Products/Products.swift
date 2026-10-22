@@ -42,6 +42,9 @@ extension Dependency.Values {
 
 extension Product.Service: Dependency.Key.Test {
     public static var testValue: Self {
-        Self(client: Product.Service.Client.testValue)
+        _read {
+            let value = Self(client: .testValue)
+            yield value
+        }
     }
 }
