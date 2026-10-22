@@ -25,11 +25,14 @@ extension Product.Service {
 
 extension Product.Service.Client: Dependency.Key.Test {
     public static var testValue: Self {
-        Self(
-            catalog: { Product.Catalog.default },
-            validate: { Product.Catalog.default.isValidPlan($0) },
-            capabilities: { $0.capabilities(from: Product.Catalog.default) }
-        )
+        _read {
+            let value = Self(
+                catalog: { Product.Catalog.default },
+                validate: { Product.Catalog.default.isValidPlan($0) },
+                capabilities: { $0.capabilities(from: Product.Catalog.default) }
+            )
+            yield value
+        }
     }
 }
 
