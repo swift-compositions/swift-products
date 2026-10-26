@@ -2,14 +2,8 @@
 
 import PackageDescription
 
-extension String {
-    static let products: Self = "Products"
-    var live: Self { self + " Live" }
-    var tests: Self { self + " Tests" }
-}
-
 extension Target.Dependency {
-    static var products: Self { .target(name: .products) }
+    static var products: Self { .target(name: "Products") }
     static var dependencies: Self { .product(name: "Dependencies", package: "swift-dependencies") }
     static var entitlement: Self { .product(name: "Entitlement", package: "swift-entitlement") }
     static var tagged: Self {
@@ -29,12 +23,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: .products,
-            targets: [.products]
+            name: "Products",
+            targets: ["Products"]
         ),
         .library(
-            name: .products.live,
-            targets: [.products.live]
+            name: "Products Live",
+            targets: ["Products Live"]
         ),
     ],
     dependencies: [
@@ -51,7 +45,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: .products,
+            name: "Products",
             dependencies: [
                 .dependencies,
                 .entitlement,
@@ -60,14 +54,14 @@ let package = Package(
             ]
         ),
         .target(
-            name: .products.live,
+            name: "Products Live",
             dependencies: [
                 .products,
                 .dependencies,
             ]
         ),
         .testTarget(
-            name: .products.tests,
+            name: "Products Tests",
             dependencies: [
                 .products,
                 .product(name: "Dependencies Test Support", package: "swift-dependencies"),
